@@ -1,2 +1,3 @@
 # Spider
-about simple Spider
+
+关于利用bs4库中的BeautifulSoup模块及Requests模块爬取百思不得姐的视频及煎蛋网的美女图片

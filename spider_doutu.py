@@ -12,7 +12,7 @@ def get_url(url):
     time.sleep(2)
     info = requests.get(url, headers)
     info_text = info.text
-    soup = BeautifulSoup(info_text, 'lxml')
+    soup = BeautifulSoup(info_text, 'html')
     all_a = soup.find_all('a', class_='list-group-item')
     down_list = []
     for link in all_a:
@@ -28,7 +28,7 @@ def get_img(img_list):
     for item in down_list:
         main_info = requests.get(item)
         main_content = main_info.text
-        s = BeautifulSoup(main_content, 'lxml')
+        s = BeautifulSoup(main_content, 'html')
         all_img = s.select('div[class="artile_des"] > table > tbody > tr > td > a > img')
         for i in all_img:
             all_img_title.append(i.get('alt'))
@@ -40,7 +40,7 @@ def get_img(img_list):
 
 
 def down(title, link):
-    file_path = 'D:/doutu/'
+    file_path = '/home/zds/Documents/myself'
     try:
         for t, l in zip(title, link):
             urllib.request.urlretrieve(l, file_path + t + '.jpg')

@@ -10,8 +10,8 @@ r2 = requests.post(
     data={
         "utf8": '✓',
         'authenticity_token': token,
-        'login': '673711980@qq.com',
-        'password': 'zds819918',
+        'login': 'your username',
+        'password': 'your password',
         'commit': 'Sign in'
     },
     cookies=r1_cookie_dict
